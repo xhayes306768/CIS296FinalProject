@@ -1,4 +1,5 @@
 using CIS296FinalProject.Data;
+using CIS296FinalProject.Models.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("MusicContext");
 builder.Services.AddDbContext<MusicContext>(options =>
     options.UseSqlServer(connectionString));
+
+
+builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddControllersWithViews();
 
