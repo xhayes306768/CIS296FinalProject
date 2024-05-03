@@ -27,7 +27,7 @@ namespace CIS296FinalProject.Models.Repositories
 
             // Apply filtering
             if (!string.IsNullOrEmpty(searchTerm))
-            {
+    {
                 query = query.Where(a => a.Title.Contains(searchTerm) || a.Artist.Contains(searchTerm));
             }
 

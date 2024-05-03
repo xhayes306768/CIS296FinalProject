@@ -9,7 +9,7 @@ namespace CIS296FinalProject.Models
         [NotMapped]
         public IList<string> RoleNames { get; set; }
 
-        public string FirstName { get; set; }
+        public required string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; internal set; }
     }
