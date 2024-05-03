@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using CIS296FinalProject.Models;
 
-
+//X
 namespace CIS296FinalProject.Controllers
 {
     public class AccountController : Controller
@@ -28,7 +28,7 @@ namespace CIS296FinalProject.Controllers
             if (ModelState.IsValid)
             {
                 var user = new User { UserName = model.Username, Email = model.Email };
-                var result = await _userManager.CreateAsync(user, model.Password);
+                var result = await _userManager.CreateAsync(user, model.Password); 
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
